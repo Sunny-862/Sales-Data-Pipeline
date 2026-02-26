@@ -1,0 +1,23 @@
+SELECT
+    row_id,
+    order_id,
+    CAST(order_date AS DATE) AS order_date,
+    CAST(ship_date AS DATE) AS ship_date,
+    UPPER(TRIM(ship_mode)) AS ship_mode,
+    customer_id,
+    customer_name,
+    segment,
+    country,
+    city,
+    state,
+    postal_code,
+    region,
+    product_id,
+    category,
+    sub_category,
+    product_name,
+    sales,
+    quantity,
+    discount,
+    profit
+FROM retail_dw.raw.orders_raw

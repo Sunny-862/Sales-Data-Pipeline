@@ -1,0 +1,36 @@
+version: 2
+
+models:
+
+  - name: dim_customers
+    description: "Customer dimension table"
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_products
+    description: "Product dimension table"
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_date
+    description: "Date dimension"
+    columns:
+      - name: order_date
+        tests:
+          - not_null
+
+  - name: dim_location
+    description: "Location dimension"
+
+  - name: fact_orders
+    description: "Fact table containing order transactions"
+    columns:
+      - name: order_id
+        tests:
+          - not_null
