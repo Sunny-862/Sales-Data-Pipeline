@@ -138,9 +138,9 @@ dbt test
 
 ---
 
-## 📸 Dashboard Preview
+## Dashboard Preview
 
-*(Add your Power BI screenshots here later)*
+<img width="1277" height="718" alt="image" src="https://github.com/user-attachments/assets/fe127cf5-2f7b-463d-99ad-9e8c477abd4a" />
 
 ---
 
@@ -160,11 +160,7 @@ dbt test
 * Creating star schema for analytics
 * Connecting Snowflake with BI tools
 
----
 
-##  Author
 
-**Sunny Kadam**
-Aspiring Data Analyst & Data Engineer
 
 
