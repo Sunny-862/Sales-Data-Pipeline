@@ -1,12 +1,6 @@
-<h1 align="center"> Sales Data Pipeline & Analytics Dashboard</h1>
+# Air Traffic Performance & Trend Analysis
 
-<p align="center">
-  <img src="https://img.shields.io/badge/AWS-S3-orange?style=for-the-badge&logo=amazonaws" />
-  <img src="https://img.shields.io/badge/Snowflake-Data%20Warehouse-blue?style=for-the-badge&logo=snowflake" />
-  <img src="https://img.shields.io/badge/dbt-Transformations-orange?style=for-the-badge&logo=dbt" />
-  <img src="https://img.shields.io/badge/SQL-Analytics-blue?style=for-the-badge&logo=postgresql" />
-  <img src="https://img.shields.io/badge/Power%20BI-Dashboard-yellow?style=for-the-badge&logo=powerbi" />
-</p>
+![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white) ![Pandas](https://img.shields.io/badge/-Pandas-150458?style=flat&logo=pandas&logoColor=white) ![NumPy](https://img.shields.io/badge/-NumPy-013243?style=flat&logo=numpy&logoColor=white) ![Matplotlib](https://img.shields.io/badge/-Matplotlib-11557c?style=flat) ![Seaborn](https://img.shields.io/badge/-Seaborn-4C72B0?style=flat)
 
 ---
 
