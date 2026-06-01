@@ -1,169 +1,159 @@
-<h1 align="center">Air Traffic Performance & Trend Analysis</h1>
+<h1 align="center"> 🚀 Sales Data Pipeline (End-to-End)</h1>
 
-![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white) ![Pandas](https://img.shields.io/badge/-Pandas-150458?style=flat&logo=pandas&logoColor=white) ![NumPy](https://img.shields.io/badge/-NumPy-013243?style=flat&logo=numpy&logoColor=white) ![Matplotlib](https://img.shields.io/badge/-Matplotlib-11557c?style=flat) ![Seaborn](https://img.shields.io/badge/-Seaborn-4C72B0?style=flat) ![Jupyter Notebook](https://img.shields.io/badge/-Jupyter%20Notebook-F37626?style=flat&logo=jupyter&logoColor=white) ![EDA](https://img.shields.io/badge/-EDA-008080?style=flat)
+# Sales Data Pipeline & Analytics Dashboard
+
+![AWS S3](https://img.shields.io/badge/-AWS%20S3-FF9900?style=flat&logo=amazons3&logoColor=white) ![Snowflake](https://img.shields.io/badge/-Snowflake-29B5E8?style=flat&logo=snowflake&logoColor=white) ![dbt](https://img.shields.io/badge/-dbt-FF694B?style=flat&logo=dbt&logoColor=white) ![SQL](https://img.shields.io/badge/-SQL-4479A1?style=flat&logo=postgresql&logoColor=white) ![Power BI](https://img.shields.io/badge/-Power%20BI-F2C811?style=flat&logo=powerbi&logoColor=black)
+
+---
+  <b>Modern ELT Pipeline using AWS S3, Snowflake, dbt & Power BI</b>
+</p>
 
 ---
 
 ## 📌 Project Overview
 
-The **Sales Data Pipeline & Analytics Dashboard** project demonstrates a complete **modern cloud-based ELT pipeline** built to process, transform, and visualize retail sales data for business intelligence and decision-making.
+This project demonstrates a **modern cloud-based data engineering pipeline** that ingests raw retail sales data, transforms it into analytics-ready datasets, and visualizes actionable business insights.
 
-This project integrates **AWS S3, Snowflake, dbt, SQL, and Power BI** to automate the movement of raw data into analytics-ready dashboards.
+### 🔄 Pipeline Flow
 
-The project focuses on:
-
-✅ Automating cloud-based data ingestion  
-✅ Building scalable data transformation workflows  
-✅ Creating analytics-ready star schema models  
-✅ Delivering interactive business dashboards  
-✅ Generating actionable sales insights using BI tools  
+```text
+AWS S3 ➝ Snowflake RAW ➝ Snowflake STAGING ➝ Snowflake ANALYTICS ➝ Power BI
+```
 
 ---
 
-## 🔄 Project Workflow
+## Architecture
 
-Raw CSV Data → AWS S3 → Snowflake RAW Layer → dbt Transformations → Analytics Layer → Power BI Dashboard
-
----
-
-## 🎯 Objectives
-
-The major objectives of this project are:
-
-✅ Build an end-to-end cloud-based ELT pipeline  
-✅ Automate ingestion of retail sales datasets into Snowflake  
-✅ Transform raw datasets into analytics-ready models using dbt  
-✅ Create optimized fact and dimension tables for reporting  
-✅ Develop interactive dashboards for sales and customer insights  
-
----
-
-## 🗂️ Dataset Overview
-
-The dataset contains retail sales transaction records including customer, product, and regional sales information.
-
-### Key Features Included:
-
-- 📦 **Product Information**
-- 👥 **Customer Details**
-- 🌍 **Region & Location**
-- 📅 **Order Date**
-- 💰 **Revenue & Sales Metrics**
-- 🧾 **Order Information**
-- 📊 **Category & Segment Data**
-
-These features help analyze customer behavior, sales performance, product demand, and regional revenue trends.
+```text
+           ┌────────────┐
+           │   AWS S3   │
+           │ Raw CSV    │
+           └─────┬──────┘
+                 │
+                 ▼
+      ┌────────────────────┐
+      │ Snowflake RAW      │
+      │ External Stage     │
+      │ + Snowpipe         │
+      └─────────┬──────────┘
+                │
+                ▼
+      ┌────────────────────┐
+      │ Snowflake STAGING  │
+      │ dbt Models         │
+      └─────────┬──────────┘
+                │
+                ▼
+      ┌────────────────────┐
+      │ Snowflake MARTS    │
+      │ Analytics Layer    │
+      └─────────┬──────────┘
+                │
+                ▼
+         📊 Power BI Dashboard
+```
 
 ---
 
 ## 🛠️ Tech Stack & Tools Used
 
 | Category | Tools / Technologies |
-|----------|----------------------|
-| Cloud Storage | AWS S3 |
-| Data Warehouse | Snowflake |
-| Data Transformation | dbt, SQL |
-| Visualization | Power BI |
-| Version Control | Git & GitHub |
-| Environment | Jupyter Notebook |
+| :--- | :--- |
+| **Cloud Storage** | AWS S3 |
+| **Data Warehouse** | Snowflake |
+| **Data Transformation** | dbt, SQL |
+| **Visualization** | Power BI |
+| **Version Control** | Git & GitHub |
+| **Environment** | Jupyter Notebook |
 
 ---
 
-## 🧹 Data Ingestion & Processing
+## 📁 Project Structure
 
-The project implements an automated ELT workflow for handling retail sales data.
-
-### ✔️ Data Ingestion Steps
-
-- Uploaded raw CSV datasets into **AWS S3**
-- Connected Snowflake using **External Stages**
-- Automated ingestion using **Snowpipe**
-- Loaded raw datasets into the **RAW schema**
-
-### 🔍 Processing Improvements
-
-- Automated data loading workflows
-- Reduced manual intervention using Snowpipe
-- Structured scalable cloud-based ingestion architecture
-
----
-
-## 🔄 Data Transformation with dbt
-
-The raw data was transformed into analytics-ready datasets using **dbt models** and **SQL transformations**.
-
-### Key Transformations Performed:
-
-✅ Cleaned and standardized raw sales records  
-✅ Built **staging models** for preprocessing  
-✅ Created **fact and dimension tables**  
-✅ Implemented **star schema architecture**  
-✅ Optimized tables for BI reporting and analytics  
-
-### Core Models Created:
-
-- 📦 `dim_products`
-- 👥 `dim_customers`
-- 🧾 `fact_orders`
-- 📊 `sales_summary`
-
----
-
-## 📊 Data Modeling & Analytics
-
-A scalable analytics layer was created inside Snowflake for faster querying and reporting.
-
-### Analytics Features:
-
-- ⭐ Star schema implementation
-- 📈 Optimized reporting tables
-- ⚡ Faster analytical query performance
-- 📊 BI-ready structured datasets
-
----
-
-## 📈 Dashboard & Visualization
-
-Interactive dashboards were created using **Power BI** to generate actionable business insights.
-
-### Dashboard Highlights:
-
-- 📈 Sales performance trends
-- 🌍 Revenue analysis by region
-- 🏆 Top-selling products
-- 👥 Customer segmentation analysis
-- 📦 Product category performance
-- 💰 Revenue growth tracking
-
----
-
-## 📊 Key Insights & Findings
-
-✨ Identified high-performing products and regions  
-✨ Analyzed customer purchasing behavior trends  
-✨ Tracked revenue growth across multiple segments  
-✨ Improved visibility into sales performance metrics  
-✨ Enabled faster business reporting and analytics  
-
----
-
-## 🚀 Business Impact
-
-This project can support:
-
-✔️ Retail sales optimization  
-✔️ Customer behavior analysis  
-✔️ Faster business reporting  
-✔️ Revenue trend monitoring  
-✔️ Data-driven strategic decision making  
-
----
-
-## 🏗️ Pipeline Architecture
-
-```text
-AWS S3 ➝ Snowflake RAW ➝ Snowflake STAGING ➝ Snowflake ANALYTICS ➝ Power BI Dashboard
+```bash
+Sales-Data-Pipeline/
+│
+├── retail_project/              # dbt project
+│   ├── models/
+│   │   ├── staging/
+│   │   └── marts/
+│   ├── seeds/
+│   ├── snapshots/
+│   ├── tests/
+│   ├── macros/
+│   ├── dbt_project.yml
+│   └── packages.yml
+│
+├── snowflake_sql/
+│   └── pipeline_setup.sql       # Snowflake setup
+│
+├── data_sample/
+│   └── orders.csv               # Sample dataset
+│
+├── README.md
+└── .gitignore
 ```
+
+---
+
+## 🔄 Data Pipeline Flow
+
+### 1️⃣ Data Ingestion
+
+📂 Raw CSV files uploaded to **AWS S3**
+
+🔗 Snowflake **External Stage** connects to S3
+
+⚡ **Snowpipe** automatically loads data into the `RAW` schema
+
+---
+
+### 2️⃣ Data Transformation (dbt)
+
+🧹 `stg_orders.sql` cleans raw data
+
+👥 `dim_customers.sql` builds customer dimension
+
+📦 `dim_products.sql` builds product dimension
+
+🧾 `fact_orders.sql` builds fact table
+
+---
+
+### 3️⃣ Data Modeling
+
+⭐ Star schema created in the **Analytics Layer**
+
+⚡ Optimized fact & dimension tables for BI reporting
+
+📈 Faster querying and dashboard performance
+
+---
+
+### 4️⃣ Visualization
+
+📊 Snowflake connected to **Power BI**
+
+Dashboard includes:
+
+- 📈 Sales trends
+- 🌍 Revenue by region
+- 🏆 Top selling products
+- 👥 Customer segmentation
+
+---
+
+## 💡 Key Business Insights
+
+✅ Region-wise sales performance
+
+✅ Top-selling products
+
+✅ Revenue growth trends
+
+✅ Customer behavior analysis
+
+✅ Product performance tracking
 
 ---
 
@@ -171,23 +161,23 @@ AWS S3 ➝ Snowflake RAW ➝ Snowflake STAGING ➝ Snowflake ANALYTICS ➝ Power
 
 ### 🔹 Step 1 — Setup Snowflake
 
-Run the SQL setup script inside Snowflake.
+Run the SQL setup script:
 
 ```sql
-pipeline_setup.sql
+snowflake_sql/pipeline_setup.sql
 ```
 
 ---
 
-### 🔹 Step 2 — Upload Dataset to AWS S3
+### 🔹 Step 2 — Upload Data to AWS S3
 
-Upload raw CSV datasets into the configured S3 bucket.
+Upload the CSV dataset into your configured S3 bucket.
 
 ---
 
-### 🔹 Step 3 — Configure Snowpipe
+### 🔹 Step 3 — Snowpipe Auto Ingestion
 
-Enable automated ingestion from AWS S3 into Snowflake RAW schema.
+Snowpipe automatically loads data into the `RAW` schema.
 
 ---
 
@@ -203,38 +193,46 @@ dbt test
 ### 🔹 Step 5 — Connect Power BI
 
 - Connect Power BI to Snowflake
-- Use analytics schema tables
-- Build dashboards and reports
+- Use the `ANALYTICS` schema
+- Build dashboards & reports
+
+---
+
+## 📊 Dashboard Preview
+
+<p align="center">
+  <img width="1277" height="718" alt="dashboard" src="https://github.com/user-attachments/assets/fe127cf5-2f7b-463d-99ad-9e8c477abd4a" />
+</p>
 
 ---
 
 ## 🔐 Security & Best Practices
 
-✅ Separate schemas for RAW, STAGING, and ANALYTICS layers  
+✅ Role-based access control in Snowflake
 
-✅ Automated ingestion using Snowpipe  
+✅ Separate schemas (`RAW`, `STAGING`, `ANALYTICS`)
 
-✅ Version control using Git & GitHub  
+✅ Secure ingestion using Snowpipe
 
-✅ Modular transformation workflow using dbt  
+✅ Sensitive files ignored via `.gitignore`
 
-✅ Structured cloud-based architecture for scalability  
+✅ Version control using Git & GitHub
 
 ---
 
 ## 📚 Learnings From This Project
 
-🎯 Building modern ELT pipelines  
+🎯 Building a modern ELT pipeline
 
-🎯 Cloud-based data warehousing with Snowflake  
+🎯 Using Snowpipe for automated ingestion
 
-🎯 Data transformation using dbt & SQL  
+🎯 Data transformation with dbt
 
-🎯 Designing analytics-ready star schema models  
+🎯 Creating star schema architecture
 
-🎯 Creating interactive Power BI dashboards  
+🎯 Building analytics-ready data marts
 
-🎯 Automating ingestion workflows using Snowpipe  
+🎯 Connecting Snowflake with BI tools
 
 ---
 
@@ -244,4 +242,6 @@ dbt test
 
 - 📧 Email: sunnykadam872@gmail.com
 
-- 💼 LinkedIn: www.linkedin.com/in/sunny-862
+- 💼 LinkedIn: [www.linkedin.com/in/sunny-862](https://www.linkedin.com/in/sunny-862)
+
+---
